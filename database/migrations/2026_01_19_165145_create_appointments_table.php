@@ -6,19 +6,27 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
         Schema::create('appointments', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');          // اسم الشخص
-            $table->string('phone');         // رقم الهاتف
-            $table->unsignedBigInteger('pricing_plan_id'); // القسم المحجوز
-            $table->timestamps();
-
-            $table->foreign('pricing_plan_id')->references('id')->on('pricing_plans')->onDelete('cascade');
+            $table->id(); // مفتاح رئيسي
+            
+            $table->string('name'); // اسم الشخص المحجوز
+            $table->string('phone'); // رقم الهاتف
+            
+            // ربط الحجز بالقسم من جدول PricingPlans
+            $table->foreignId('pricing_plan_id')->constrained()->onDelete('cascade');
+            
+            $table->timestamps(); // created_at و updated_at
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::dropIfExists('appointments');

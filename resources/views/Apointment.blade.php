@@ -5,7 +5,7 @@
     <div class="container-fluid bg-primary my-5 py-5">
         <div class="container py-5">
             <div class="row gx-5">
-                
+
                 <!-- نص دعائي على اليسار -->
                 <div class="col-lg-6 mb-5 mb-lg-0 text-end">
                     <div class="text-end">
@@ -36,40 +36,34 @@
 
                                 <!-- اختيار القسم -->
                                 <div class="col-12 col-sm-6">
-                                    <select name="pricing_plan_id" class="form-select bg-light border-0" style="height: 55px;">
+                                    <select name="pricing_plan_id" class="form-select bg-light border-0"
+                                        style="height: 55px;">
                                         <option selected>اختر القسم</option>
                                         @foreach($plans as $plan)
                                             <option value="{{ $plan->id }}">{{ $plan->title }}</option>
                                         @endforeach
                                     </select>
-                                    @error('pricing_plan_id')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
                                 </div>
 
                                 <!-- الاسم -->
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" name="name" class="form-control bg-light border-0" placeholder="اسمك" style="height: 55px;" value="{{ old('name') }}">
-                                    @error('name')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
+                                    <input type="text" name="name" class="form-control bg-light border-0" placeholder="اسمك"
+                                        style="height: 55px;">
                                 </div>
 
                                 <!-- رقم الهاتف -->
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" name="phone" class="form-control bg-light border-0" placeholder="رقم الهاتف" style="height: 55px;" value="{{ old('phone') }}">
-                                    @error('phone')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
+                                    <input type="text" name="phone" class="form-control bg-light border-0"
+                                        placeholder="رقم الهاتف" style="height: 55px;">
                                 </div>
 
                                 <!-- زر الحجز -->
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">احجز الآن</button>
                                 </div>
-
                             </div>
                         </form>
+
                     </div>
                 </div>
 

@@ -2,28 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Appointment;
-use App\Models\PricingPlan;
 use Illuminate\Http\Request;
+use App\Models\PricingPlan;
+use App\Models\Booking;
 
 class BookingController extends Controller
 {
+    // صفحة الحجز
     public function create()
     {
-        $plans = PricingPlan::all(); // جلب كل الأقسام
-        return view('Apointment', compact('plans'));
+        $plans = PricingPlan::all();  // جلب الأقسام
+        return view('Apointment', compact('plans'));  // نفس اسم الملف
     }
 
+    // حفظ الحجز
     public function store(Request $request)
     {
         $request->validate([
+            'pricing_plan_id' => 'required|exists:pricing_plans,id',
             'name' => 'required|string|max:255',
             'phone' => 'required|string|max:20',
-            'pricing_plan_id' => 'required|exists:pricing_plans,id',
         ]);
 
-        Appointment::create($request->all());
+        Booking::create([
+            'pricing_plan_id' => $request->pricing_plan_id,
+            'name' => $request->name,
+            'phone' => $request->phone,
+        ]);
 
-        return redirect()->back()->with('success', 'تم حجز الموعد بنجاح!');
+        return redirect()->back()->with('success', 'تم حجز موعدك بنجاح!');
     }
 }
