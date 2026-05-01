@@ -49,16 +49,18 @@
             </div>
 
             <!-- الخريطة -->
-            <div class="row">
-                <div class="col-12" style="height: 500px;">
-                    <div class="position-relative h-100">
-                        <iframe class="position-relative w-100 h-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
-                    </div>
-                </div>
-            </div>
+<div class="row">
+    <div class="col-12" style="height: 500px;">
+        <div class="position-relative h-100">
+            <!-- موقع مستشفى دار السلام التخصصية - العامرية (عبد القادر) -->
+            <iframe class="position-relative w-100 h-100"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3415.3045233182!2d29.8242080!3d31.1292020!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f9ede9719adbdb%3A0x6f029641e120c1da!2z2YXYs9iq2LTZgdmJINiv2KfYsSDYp9mE2LPZhNin2YUg2KfZhNiq2K7YtdmB2YrZhw!5e0!3m2!1sar!2seg!4v1714607000000!5m2!1sar!2seg"
+                frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+        </div>
+    </div>
+</div>
+</div>
 
             <!-- نموذج التواصل -->
             <!--<div class="row justify-content-center position-relative" style="margin-top: -200px; z-index: 1;">

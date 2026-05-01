@@ -78,7 +78,7 @@
                 </div>
                 <div class="col-md-6 text-center text-lg-end">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-body px-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="text-body px-2" href="https://www.facebook.com/share/1CSkJ12eYm/"><i class="fab fa-facebook-f"></i></a>
                         <a class="text-body px-2" href="#"><i class="fab fa-twitter"></i></a>
                         <a class="text-body px-2" href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a class="text-body px-2" href="#"><i class="fab fa-instagram"></i></a>

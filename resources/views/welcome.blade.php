@@ -254,7 +254,7 @@
                             <h3>{{ $plan->title }}</h3>
 
                             <p class="price">
-                                <span>EGP{{ $plan->price }}</span>
+                                <span>جنية{{ $plan->price }}</span>
                             </p>
 
                             <ul class="list-unstyled mt-3 mb-4">
@@ -309,37 +309,52 @@
     <!------------------------------------------>
 <!-- العمليات Start -->
 <div class="container-fluid py-5" style="background: #f8f9fa;">
-    <div class="container">
-        <div class="text-center mx-auto mb-5" style="max-width: 500px;">
-            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">عملياتنا</h5>
-            <h1 class="display-4">العمليات الطبية</h1>
-        </div>
 
+    <!-- العنوان -->
+    <div class="text-center mb-4">
+        <h5 class="text-primary text-uppercase border-bottom border-5 d-inline-block">
+            عملياتنا
+        </h5>
+        <h1 class="display-4 mt-3">العمليات الطبية</h1>
+    </div>
+
+    <!-- الصورة -->
+    <div style="display: flex; justify-content: center; margin-bottom: 40px;">
+        <img src="{{ asset('img/9.jpeg') }}" 
+             alt="عملياتنا"
+             style="
+                width: 50%;
+                max-height: 600px;
+                object-fit: contain;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                background: white;
+                padding: 10px;
+             ">
+    </div>
+
+    <!-- الكروت -->
+    <div class="container">
         <div class="row g-4">
             @forelse($operations as $operation)
                 <div class="col-md-6 col-lg-4">
                     <div class="team-card bg-light rounded shadow-sm overflow-hidden">
 
-                        <!-- صورة العملية -->
                         <img 
                             src="{{ Str::startsWith($operation->image, ['http','img/','storage/']) 
-                                    ? asset($operation->image) 
-                                    : asset('img/' . $operation->image) }}"
+                                ? asset($operation->image) 
+                                : asset('img/' . $operation->image) }}"
                             class="img-fluid w-100"
                             style="height: 220px; object-fit: cover;">
-                        
 
                         <div class="p-4 text-center">
-
-                            <!-- اسم العملية -->
                             <h3>{{ $operation->name }}</h3>
 
-                            <!-- السعر -->
                             <h4 class="text-primary mb-3">
                                 السعر: {{ $operation->price }} جنيه
                             </h4>
-
                         </div>
+
                     </div>
                 </div>
             @empty
@@ -347,6 +362,7 @@
             @endforelse
         </div>
     </div>
+
 </div>
 <!-- العمليات End -->
 
